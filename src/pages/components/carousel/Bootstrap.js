@@ -5,7 +5,7 @@ import styles from "../../../styles/secondPageProjet.module.scss";
 const img0 = new URL("./IMG00.jpg", import.meta.url);
 const img1 = new URL("./IMG11.jpg", import.meta.url);
 const img2 = new URL("./IMG22.jpg", import.meta.url);
-const img3 = new URL("./IMG33.jpg", import.meta.url);
+const img3 = new URL("./IMG33.JPG", import.meta.url);
 const img4 = new URL("./IMG44.jpg", import.meta.url);
 
 function MyCarousel() {
