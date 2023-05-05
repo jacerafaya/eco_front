@@ -1,6 +1,3 @@
-import styles from "../../../styles/secondPage.module.scss";
-
-
 
     const ImageArticle = ({ imagePaths }) => {
         if(!Array.isArray(imagePaths)){imagePaths=[imagePaths]}
