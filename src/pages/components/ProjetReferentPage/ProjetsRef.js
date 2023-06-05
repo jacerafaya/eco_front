@@ -1,6 +1,8 @@
 import Projet from "./Projet";
+import Layout from "@/pages/layout";
 export default function ProjetsRef() {
   return (
+    <Layout>
     <div>
       <div className="articles-container  ">
         <div className="row justify-content-center m-30">
@@ -10,5 +12,6 @@ export default function ProjetsRef() {
            </div>
          </div>
       </div>
+      </Layout>
   );
 }

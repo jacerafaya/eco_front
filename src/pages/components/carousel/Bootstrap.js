@@ -15,17 +15,17 @@ function MyCarousel() {
     <div className={styles.top_carrousel}>
       <Carousel className="carrousel" breakPoints={breakPoints} autoPlay>
         <div>
-          <img src={img1} alt="tahche"></img>
+          <img src={img1} alt="imgNumber"></img>
           <h1>hello</h1>
         </div>
         <div>
-          <img src={img2} alt="tahche"></img>
+          <img src={img2} alt="imgNumber"></img>
         </div>
         <div>
-          <img src={img3} alt="tahche"></img>
+          <img src={img3} alt="imgNumber"></img>
         </div>
         <div>
-          <img src={img4} alt="tahche"></img>
+          <img src={img4} alt="imgNumber"></img>
         </div>
       </Carousel>
     </div>

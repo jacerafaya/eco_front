@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import Stepper from "../components/Stepper/Stepper";
 import { TbSolarPanel, TbSolarPanel2 } from "react-icons/tb";
+import Layout from "../layout";
 const img_panneau_sol = new URL(
   "../../../public/assets/panneau_sur_sol.png",
   import.meta.url
@@ -13,32 +14,52 @@ export default function Etape3() {
   const router = useRouter();
   console.log(router.query);
   const [place, setPlace] = useState(router.query.place ?? "sol");
-  const [longeur, setLongeur] = useState(router.query.longeur ?? 0);
+  const [longueur, setLongueur] = useState(router.query.longueur ?? 0);
   const [largeur, setLargeur] = useState(router.query.largeur ?? 0);
   const [orientation, setOrientation] = useState(
     router.query.orientation ?? "votre orientation"
   );
+  const [region, setRegion] = useState(
+    router.query.region ?? "votre région"
+  );
+  
   const [showOptions, setShowOptions] = useState(false);
+  const [showOptions1, setShowOptions1] = useState(false);
   const dropdownRef = useRef(null);
+  const dropdownRef1 = useRef(null);
   const handleSelect = (value) => {
     setOrientation(value);
     setShowOptions(false)
   };
+  const handleSelect1 = (value) => {
+    setRegion(value);
+    setShowOptions1(false)
+  };
   const handleDropdownClick = () => {
     setShowOptions(!showOptions);
   };
+  const handleDropdownClick1 = () => {
+    setShowOptions1(!showOptions1);
+  };
   const handleDropdownChange = (event) => {
     setShowOptions(event.target.value);
+  };
+  const handleDropdownChange1 = (event) => {
+    setShowOptions1(event.target.value);
   };
   const handleOptionClick = (value) => {
     handleSelect(value);
     dropdownRef.current.focus();
   };
+  const handleOptionClick1 = (value) => {
+    handleSelect1(value);
+    dropdownRef1.current.focus();
+  };
 
   const [errorMessage, setErrorMessage] = useState('');
   const [hasSubmitted, setHasSubmitted] = useState(false);
  
-  const isSubmitDisabled = longeur === 0|| largeur === 0 || orientation === 'votre orientation';
+  const isSubmitDisabled = longueur === 0|| largeur === 0 || orientation === 'votre orientation';
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isSubmitDisabled) {
@@ -50,6 +71,7 @@ export default function Etape3() {
     }
   };
   return (
+    <Layout>
     <div className="wrapper2">
       <Navbar />
       <Stepper index={3} />
@@ -96,21 +118,21 @@ export default function Etape3() {
               </div>
             </div>       
             <div className=" row ">
-              <div className="Longeur">
-              <label>Largeur :
+              <div className="Longueur">
+              <label>Longueur :
               <input
                 type="text"
-                name="longeur"
-                placeholder="longeur"
+                name="longueur"
+                placeholder="longueur"
                 className="formInput"
-                value={longeur}
+                value={longueur}
                 onChange={(event) => {
-                  setLongeur(event.target.value);
+                  setLongueur(event.target.value);
                 }}
                 required
               />
               </label>
-              <label>Longeur : 
+              <label>Largeur : 
               <input
                 type="text"
                 name="largeur"
@@ -126,9 +148,188 @@ export default function Etape3() {
               </div>
             </div>
             <div className="row  justify-content-center">
+            <div className="formSelect1">
+                <div className="selectDropdown1" tabIndex="0" onClick={handleDropdownClick1} onChange={handleDropdownChange1} ref={dropdownRef1}
+                >
+                  <span>{region || 'Choose region'}</span>
+                  <span className="selectArrow1"></span>
+                </div>
+              {showOptions1 && (
+              <div className="selectOptions1">
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Ariana')
+                }
+                >
+                  Ariana
+                </div>        
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Beja')
+                }
+                >
+                  Beja
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Ben Arous')
+                }
+                >
+                  Ben Arous
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Bizerte')
+                }
+                >
+                  Bizerte
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Gabes')
+                }
+                >
+                  Gabes
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Gafsa')
+                }
+                >
+                  Gafsa
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Jendouba')
+                }
+                >
+                  Jendouba
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Kairouan')
+                }
+                >
+                  Kairouan
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Kasserine')
+                }
+                >
+                  Kasserine
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Kebili')
+                }
+                >
+                  Kebili
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Kef')
+                }
+                >
+                  Kef
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Mahdia')
+                }
+                >
+                  Mahdia
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Manouba')
+                }
+                >
+                  Mannouba
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Medenine')
+                }
+                >
+                  Medenine
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Monastir')
+                }
+                >
+                 Monastir
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Nabeul')
+                }
+                >
+                  Nabeul
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Sfax')
+                }
+                >
+                  Sfax
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Sidi Bouzid')
+                }
+                >
+                  Sidi Bouzid
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Siliana')
+                }
+                >
+                  Siliana
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Sousse')
+                }
+                >
+                  Sousse
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Tataouine')
+                }
+                >
+                  Tataouine
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Tozeur')
+                }
+                >
+                  Tozeur
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Tunis')
+                }
+                >
+                  Tunis
+                </div>  
+                <div
+                  className="selectOption1"
+                  onClick={() => handleSelect1('Zaghouan')
+                }
+                >
+                  Zaghouan
+                </div>       
+              </div>
+              
+              )}
+              
+              </div>
               <div className="formSelect1">
-              <div className="region">
-              <h4 className="radtitle">Votre region :</h4>
                 <div className="selectDropdown1" tabIndex="0" onClick={handleDropdownClick} onChange={handleDropdownChange} ref={dropdownRef}
                 >
                   <span>{orientation || 'Choose orientation'}</span>
@@ -157,7 +358,7 @@ export default function Etape3() {
               </div>
               </div>
               )}
-              </div>
+              
               </div>
             </div>
             {(isSubmitDisabled || (hasSubmitted && isSubmitDisabled))&& <div className="row justify-content-center " style={{ color: 'orange' }}>* Merci de remplir tous les champs</div>}
@@ -201,9 +402,10 @@ export default function Etape3() {
                       type: router.query.type,
                       technology: router.query.technology,
                       place: place,
-                      longeur: longeur,
+                      longueur: longueur,
                       largeur: largeur,
                       orientation: orientation,
+                      region :region,
                     },
                   });
                 }}
@@ -216,5 +418,6 @@ export default function Etape3() {
       </div>
       <Footer />
     </div>
+    </Layout>
   );
 }

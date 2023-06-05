@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Stepper from "../components/Stepper/Stepper";
+import Layout from "../layout";
 export default function Cordonnees() {
   const router = useRouter();
   const [firstName, setFirstName] = useState(router.query.firstName ?? "");
@@ -31,6 +32,7 @@ export default function Cordonnees() {
   };
 
   return (
+    <Layout>
     <div className="wrapper2">
       <Navbar />
       <Stepper index={1} />
@@ -155,5 +157,6 @@ export default function Cordonnees() {
       </div>
       <Footer />
     </div>
+    </Layout>
   );
 }

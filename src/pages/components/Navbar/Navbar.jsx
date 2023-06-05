@@ -12,10 +12,11 @@ const log= new URL("./logo.png",import.meta.url);
 const MENU_LIST = [
 
    { text: "Acceuil", href: "/" },
-  { text: "Articles", href: "/Articles" },
   { text: "Services", href: "/ServicePage" },
-  { text: "Projets réferents", href: "/ProjetRefPage"},
+  { text: "Projets référents", href: "/ProjetRefPage"},
+  { text: "Articles", href: "/Articles" },
   { text: "Contact", href: "/Contact"},
+
   // { text: "Formulaire de devis ", href: "/devis/Cordonnees" },
 
 ];

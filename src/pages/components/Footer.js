@@ -4,7 +4,7 @@ import styles from "../../styles/Navbar.module.css";
 const logg = new URL("./Navbar/logo.png", import.meta.url);
 import { useState, useEffect, useRef } from "react";
 export default function Footer() {
-  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "http://localhost:5050";
+  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "https://www.ecosolution.tn/api/back";
   const [contact, setContact] = useState([]);
 
   useEffect(() => {
@@ -22,14 +22,14 @@ export default function Footer() {
   const localisation = parseFloat(contact[0]?.localisation);
 
   return (
-    <footer class="footer-section">
-      <div class="container">
-        <div class="footer-cta pt-5 pb-5">
-          <div class="row">
-            <div class="col-xl-4 col-md-4 mb-30">
-              <div class="single-cta">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="cta-text">
+    <footer className="footer-section">
+      <div className="container">
+        <div className="footer-cta pt-5 pb-5">
+          <div className="row">
+            <div className="col-xl-4 col-md-4 mb-30">
+              <div className="single-cta">
+                <i className="fas fa-map-marker-alt"></i>
+                <div className="cta-text">
                   <h4>Localisation</h4>
                   <span>
                     {contact[0]?.localisation}
@@ -38,19 +38,19 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-md-4 mb-30">
-              <div class="single-cta">
-                <i class="fas fa-phone"></i>
-                <div class="cta-text">
+            <div className="col-xl-4 col-md-4 mb-30">
+              <div className="single-cta">
+                <i className="fas fa-phone"></i>
+                <div className="cta-text">
                   <h4>Numéro de téléphone</h4>
-                  <span> {numeroTelephone} 58176730</span>
+                  <span> +216 58176730</span>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-md-4 mb-30">
-              <div class="single-cta">
-                <i class="far fa-envelope-open"></i>
-                <div class="cta-text">
+            <div className="col-xl-4 col-md-4 mb-30">
+              <div className="single-cta">
+                <i className="far fa-envelope-open"></i>
+                <div className="cta-text">
                   <h4>E-mail</h4>
                   <span>{contact[0]?.email} contact@ecosolution.com</span>
                 </div>
@@ -58,34 +58,34 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div class="footer-content pt-5 pb-5">
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 mb-50">
-              <div class="footer-widget">
-                <div class="footer-logo">
+        <div className="footer-content pt-5 pb-5">
+          <div className="row">
+            <div className="col-xl-4 col-lg-4 mb-50">
+              <div className="footer-widget">
+                <div className="footer-logo">
                   <a href="/">
                     <img className="img-fluid " src={logg} width="200"></img>
                   </a>
                 </div>
-                <div class="footer-text"></div>
-                <div class="footer-social-icon">
+                <div className="footer-text"></div>
+                <div className="footer-social-icon">
                   <span>Abonnez nous</span>
                   <a href="https://www.facebook.com/ecosoltunisie">
                     {contact[0]?.lienFacebook}
-                    <i class="fab fa-facebook-f facebook-bg"></i>
+                    <i className="fab fa-facebook-f facebook-bg"></i>
                   </a>
                   <a href="#">
-                    <i class="fab fa-twitter twitter-bg"></i>
+                    <i className="fab fa-twitter twitter-bg"></i>
                   </a>
                   <a href="#">
-                    <i class="fab fa-google-plus-g google-bg"></i>
+                    <i className="fab fa-google-plus-g google-bg"></i>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-              <div class="footer-widget">
-                <div class="footer-widget-heading">
+            <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
+              <div className="footer-widget">
+                <div className="footer-widget-heading">
                   <h3>Ecosolutions</h3>
                 </div>
                 <ul>
@@ -104,12 +104,12 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-              <div class="footer-widget">
-                <div class="footer-widget-heading">
+            <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
+              <div className="footer-widget">
+                <div className="footer-widget-heading">
                   <h3>Evaluez votre devis</h3>
                 </div>
-                <div class="footer-text mb-25">
+                <div className="footer-text mb-25">
                   <p>
                     vous pouvez évaluer votre devis en cliquant sur ce bouton
                   </p>

@@ -1,3 +1,4 @@
+import styles from "./Projet.module.css";
 export default function Projet1({
   id,
   titre,
@@ -9,20 +10,13 @@ export default function Projet1({
   img,
 }) {
   return (
-    <div className="proj container-fluid d-flex justify-content-center ">
-      <div className="section2_inner">
-        <div
-          className="section2_left"
-          style={{ "background-image": `url(${img})` }}
-        ></div>
-        <div className="section2_right">
-          <div>
-            {" "}
-            <h1>{titre}</h1>
-            <h2>Type : {type}</h2>
-            <p>{description}</p>
-          </div>
-        </div>
+    <div className={styles.cardBlog}>
+      <div className="card-body">
+      <img className={styles.cards_img} src={img} />
+      <h1 className={styles.card_title}>{titre}</h1>
+      <h2 className={styles.card_title}>adresse :{adresse}</h2>
+      <p className={styles.card_text} >{description}</p>
+       
       </div>
     </div>
   );

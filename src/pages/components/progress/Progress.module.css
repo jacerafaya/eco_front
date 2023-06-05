@@ -88,8 +88,10 @@ box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
     gap:10px;
 }
 .first_title{
-
-    font-weight: 900;
+  font-weight: 1000;
+  position:absolute;
+  font-size : 25px;
+  margin-bottom:300px;
 }
 .container{
     margin-bottom: 90px;
@@ -106,17 +108,26 @@ box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
       text-align: center;
     }
 }
-
+.item_title {
+    text-align: center;
+    display : flex ;
+    align-self: center;
+    margin-bottom: 10px;
+    font-size: medium;
+  }
+  
 .counter_container_mobile{
-    margin-right: 120px;
-    gap: 100px;
-    align-items: center;
-    justify-content: center;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 100%;
+    
 }
+
 .first_title_mobile{
     font-weight: 900;
     align-self: center;
+    
 
 }

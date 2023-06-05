@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Service from "./Service";
 export default function Services() {
   const [services, setServices] = useState([]);
-  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "http://localhost:5050";
+  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "https://www.ecosolution.tn/api/back";
 
   useEffect(() => {
     fetch(`${PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL}/services`)
@@ -17,7 +17,7 @@ export default function Services() {
 
   return (
    
-          <div className={styles.container}  >
+          <div className={styles.container}>
             {services.map((element, key) => (
               <Service
                 key={key}

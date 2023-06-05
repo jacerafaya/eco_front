@@ -1,10 +1,11 @@
 import Projet1 from "./Projet1";
+import styles from "./Projet.module.css"
 import { useState, useEffect } from "react";
 import Link from "next/link";
 export default function Projets() {
   const [projetCardsContent, setProjetCardsContent] = useState([]);
-  const PROTOCOLANDHOSTNAMEPARTOFTHEURL = "http://localhost:5050/";
-  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "http://localhost:5050";
+  const PROTOCOLANDHOSTNAMEPARTOFTHEURL = "https://www.ecosolution.tn/api/back";
+  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "https://www.ecosolution.tn/api/back";
   const [projets, setProjets] = useState([]);
   useEffect(() => {
     fetch(`${PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL}/projets`)
@@ -26,10 +27,9 @@ export default function Projets() {
   }, []);
   return (
     <div>
-      <div>
-        <div>
+    <div className={styles.container} >
           <div>
-            {projetCardsContent.map((element, key) => (
+            {projets.map((element, key) => (
               <Projet1
                 key={key}
                 id={element._id}
@@ -43,18 +43,13 @@ export default function Projets() {
               />
             ))}
           </div>
+          </div>
           <div className="container-fluid d-flex justify-content-center">
             <Link href="../../ProjetRefPage">
               <button className="blog-button  ">voir tous les projets</button>
             </Link>
           </div>
-        </div>
-        {/* <div className="container-fluid d-flex justify-content-center">
-          <Link href="../../ProjetRefPage">
-            <button className="blog-button  ">voir tous les projets</button>
-          </Link>
-        </div> */}
-      </div>
-    </div>
+        
+      </div> 
   );
 }

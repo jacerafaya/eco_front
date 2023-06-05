@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
+import Layout from "../layout";
 import Link from "next/link";
 
 import Stepper from "../components/Stepper/Stepper";
@@ -34,7 +35,7 @@ export default function Etape5() {
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     console.log(router.query);
-    const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "http://localhost:5050";
+    const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "https://www.ecosolution.tn/api/back";
     const [puissance, setPuissance] = useState([]);
 
     useEffect(() => {
@@ -73,9 +74,10 @@ export default function Etape5() {
                 type: router.query.type,
                 technology: router.query.technology,
                 place: router.query.place,
-                longeur: router.query.longeur,
+                longueur: router.query.longueur,
                 largeur: router.query.largeur,
                 orientation: router.query.orientation,
+                region :router.query.region,
                 puissance: router.query.technology === "Allemande" ? puissanceAllemand : puissanceChinois,
             }),
             headers: {
@@ -90,6 +92,7 @@ export default function Etape5() {
     }
 
     return (
+        <Layout>
         <div className="wrapper2">
             <Navbar />
             <Stepper index={5} />
@@ -185,9 +188,10 @@ export default function Etape5() {
                                             type: router.query.type,
                                             technology: router.query.technology,
                                             place: router.query.place,
-                                            longeur: router.query.longeur,
+                                            longueur: router.query.longueur,
                                             largeur: router.query.largeur,
                                             orientation: router.query.orientation,
+                                            region : router.query.region,
                                         },
                                     });
                                 }}>
@@ -225,5 +229,6 @@ export default function Etape5() {
             </div>
             <Footer />
         </div>
+        </Layout>
     );
 }

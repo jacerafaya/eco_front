@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRef } from "react";
 import Stepper from "../components/Stepper/Stepper";
+import Layout from "../layout";
 export default function Etape2() {
   const router = useRouter();
   console.log(router.query);
@@ -66,6 +67,7 @@ export default function Etape2() {
     }
   };
   return (
+    <Layout>
     <div className="wrapper2">
       <Navbar />
       <Stepper index={2} />
@@ -203,5 +205,6 @@ export default function Etape2() {
       </div>
       <Footer />
     </div>
+    </Layout>
   );
 }

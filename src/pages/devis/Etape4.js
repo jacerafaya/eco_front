@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRef } from "react";
 import Stepper from "../components/Stepper/Stepper";
+import Layout from "../layout";
 import { TbSolarPanel, TbSolarPanel2 } from "react-icons/tb";
 
 const img_panneau_sol = new URL(
@@ -54,6 +55,7 @@ export default function Etape4() {
 
 
   return (
+    <Layout>
     <div className="wrapper2">
       <Navbar />
       <Stepper index={4} />
@@ -284,9 +286,10 @@ export default function Etape4() {
                       type: router.query.type,
                       technology: router.query.technology,
                       place: router.query.place,
-                      longeur: router.query.longeur,
+                      longueur: router.query.longueur,
                       largeur: router.query.largeur,
                       orientation: router.query.orientation,
+                      region: router.query.region,
                     },
                   });
                 }}>
@@ -310,9 +313,10 @@ export default function Etape4() {
                       type: router.query.type,
                       technology: router.query.technology,
                       place: router.query.place,
-                      longeur: router.query.longeur,
+                      longueur: router.query.longueur,
                       largeur: router.query.largeur,
                       orientation: router.query.orientation,
+                      region: router.query.region,
                       estimation:estimation,
                       
                     },
@@ -326,5 +330,6 @@ export default function Etape4() {
       </div>
       <Footer />
     </div>
+    </Layout>
   );
 }

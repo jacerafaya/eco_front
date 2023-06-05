@@ -5,8 +5,9 @@ import styles from "../styles/contact.module.scss";
 import {FaFacebook, FaInstagram , FaLinkedin} from 'react-icons/fa';
 import Titres from "./components/titres/titres";
 import { useState, useEffect, useRef } from "react";
+import Layout from "./layout";
 export default function Contact() {
-  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "http://localhost:5050";
+  const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "https://www.ecosolution.tn/api/back";
   const [contact, setContact] = useState([]);
 
   useEffect(() => {
@@ -24,12 +25,13 @@ export default function Contact() {
   const   localisation = parseFloat(contact[0]?.localisation);
   const    lienFacebook = parseFloat(contact[0]?.lienFacebook);
   return (
+    <Layout>
     <div>
       <Navbar />
-      <div className={styles.contact_title}>
-      <Titres text="Contactez nous"/>
+      <h4 className={styles.contact_title}>
+      Contactez Nous
     
-      </div>
+      </h4>
       <div className={styles.containerMap}>
         <div className={styles.blockone}>
             <p>EcoSolutions Tunisie est une entreprise agréée par la STEG et l'ANME, spécialiste dans
@@ -71,5 +73,6 @@ particuliers et les professionnels.</p>
       
       <Footer />
     </div>
+    </Layout>
   );
 }
