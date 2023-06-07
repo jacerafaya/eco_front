@@ -25,8 +25,8 @@ export default async function handlerMail (req, res) {
       port: 2525,
       secure: false, // true for 465 port, false for other ports
       auth: {
-        user: 'ecosolutiontunisie@gmail.com', // SMTP username
-        pass: 'A6F99F511AD03AD8608DAF819C5A9F20D466' // SMTP password
+        user: 'yourname@gmail.com', // SMTP username
+        pass: 'your pass' // SMTP password
       },
     });
     const emailTemplatePath = path.join(process.cwd(), 'public', 'emailTemplate.html');
