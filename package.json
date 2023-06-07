@@ -14,14 +14,19 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
+    "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "daisyui": "^2.43.0",
+    "dgram": "^1.0.1",
+    "dns": "^0.2.2",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "google-maps-react": "2.0.6",
     "mdb-react-ui-kit": "^6.0.0",
     "mdb-ui-kit": "^6.2.0",
+    "net": "^1.0.2",
     "next": "13.1.6",
+    "nodemailer": "^6.9.3",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.3",
     "react-countup": "^6.4.1",
@@ -40,5 +45,10 @@
     "postcss": "^8.4.19",
     "sass": "^1.59.3",
     "tailwindcss": "^3.2.4"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }

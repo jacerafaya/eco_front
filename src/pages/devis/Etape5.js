@@ -4,8 +4,9 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
 import Layout from "../layout";
 import Link from "next/link";
-
 import Stepper from "../components/Stepper/Stepper";
+import axios from 'axios';
+
 const img_panneau_sol = new URL(
     "../../../public/assets/panneau_sur_sol.png",
     import.meta.url
@@ -33,6 +34,9 @@ const img7 = new URL(
 export default function Etape5() {
     const router = useRouter();
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [mailSubmitted, setMailSubmitted] = useState(false);
+
+  
 
     console.log(router.query);
     const PROTOCOL_AND_HOST_NAME_PART_OF_THE_URL = "https://www.ecosolution.tn/api/back";
@@ -57,7 +61,7 @@ export default function Etape5() {
     //a changer par des requete back pour avoir les variable a jour a chaque fois!!!!!!!!
     const puissanceAllemand = parseFloat(puissance[0]?.puissanceAllemande);
     const puissanceChinois = parseFloat(puissance[0]?.puissanceChinoise);
-
+    
     const sendResults = async () => {
         //envoyer au backend les informations voici les variables et comment avoir leurs contenu
         console.log('ena lina fil send results')
@@ -89,6 +93,40 @@ export default function Etape5() {
         if (response.ok) {
             setFormSubmitted(true);
         }
+    }
+
+    const sendEmail = async () => {
+        try {
+            const formData = {
+                prenom: router.query.firstName,
+                nom: router.query.lastName,
+                tel: router.query.phoneNumber,
+                age: router.query.age,
+                mail: router.query.email,
+                adresse: router.query.adress,
+                fonction: router.query.job,
+                type:router.query.type,
+                technologie:router.query.technology,
+                place:router.query.place,
+                longueur:router.query.longueur,
+                largeur: router.query.largeur,
+                orientation:router.query.orientation,
+                region:router.query.region,
+                puissance:router.query.technology === "Allemande" ? puissanceAllemand : puissanceChinois,
+              };
+          const response = await axios.post('/api/sendEmail',formData);
+    
+          if (response.status === 200) {
+            setMailSubmitted(true);
+          }
+        } catch (error) {
+          console.error('Error sending email:', error);
+        }
+      };
+   
+    const sendAll = async()=> {
+        sendResults();
+        sendEmail();
     }
 
     return (
@@ -200,7 +238,7 @@ export default function Etape5() {
 
                             <button
                                 className="form-button"
-                                onClick={sendResults}>
+                                onClick={sendEmail}>
                                 Envoyer
                             </button>
 

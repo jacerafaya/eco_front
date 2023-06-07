@@ -89,7 +89,7 @@ export default function Etape3() {
               <div class='px'>
                   <div className="itemrd">
                     <label>
-                      <input type="radio" class="option-input radio" name="example"
+                      <input type="radio" className="option-input radio" name="example"
                       id="toit"
                       value="toit"
                       checked={place === "toit"}
@@ -103,7 +103,7 @@ export default function Etape3() {
                   </div>
                   <div className="itemrd">
                   <label>
-                  <input type="radio" class="option-input radio" name="example"
+                  <input type="radio" className="option-input radio" name="example"
                   id="sol"
                   value="sol"
                   checked={place === "sol"}

@@ -14,14 +14,14 @@ const Stepper = (props) => {
     gray: "#b8b8b8",
   };
   return (
-    <div class={styles.stepper}>
+    <div className={styles.stepper}>
       {/******************************ETAPE 1 ***********************/}
       <div className={styles.step}>
         <div
           style={{
             borderBlockColor: props.index >= 1 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
         <div className={styles.step_content}>
           <FaPenSquare
@@ -42,16 +42,16 @@ const Stepper = (props) => {
           style={{
             borderBlockColor: props.index >= 1 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
       </div>
       {/******************************ETAPE 2 ***********************/}
-      <div class={styles.step}>
+      <div className={styles.step}>
         <div
           style={{
             borderBlockColor: props.index >= 2 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
         <div className={styles.step_content}>
           <FaPencilRuler
@@ -72,16 +72,16 @@ const Stepper = (props) => {
           style={{
             borderBlockColor: props.index >= 2 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
       </div>
       {/******************************ETAPE 3 ***********************/}
-      <div class={styles.step}>
+      <div className={styles.step}>
         <div
           style={{
             borderBlockColor: props.index >= 3 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
         <div className={styles.step_content}>
           <FaLocationArrow
@@ -102,16 +102,16 @@ const Stepper = (props) => {
           style={{
             borderBlockColor: props.index >= 3 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
       </div>
       {/******************************ETAPE 4 ***********************/}
-      <div class={styles.step}>
+      <div className={styles.step}>
         <div
           style={{
             borderBlockColor: props.index >= 4 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
         <div className={styles.step_content}>
           <FaChartPie
@@ -132,16 +132,16 @@ const Stepper = (props) => {
           style={{
             borderBlockColor: props.index >= 4 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
       </div>
       {/******************************ETAPE 5 ***********************/}
-      <div class={styles.step}>
+      <div className={styles.step}>
         <div
           style={{
             borderBlockColor: props.index >= 4 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
         <div className={styles.step_content}>
           <FaFlagCheckered
@@ -162,7 +162,7 @@ const Stepper = (props) => {
           style={{
             borderBlockColor: props.index >= 4 ? colors.primary : colors.gray,
           }}
-          class={styles.h_line}
+          className={styles.h_line}
         ></div>
       </div>
     </div>
